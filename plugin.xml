@@ -1,8 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-customurlscheme"
-        version="5.0.2">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-customurlscheme" version="5.0.3">
 
   <name>Custom URL scheme</name>
 
@@ -24,7 +21,7 @@
   <preference name="URL_SCHEME" />
 
   <engines>
-    <engine name="cordova" version=">=3.0.0"/>
+    <engine name="cordova" version=">=3.0.0" />
   </engines>
 
   <!-- ios -->
@@ -57,26 +54,24 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="LaunchMyApp">
-        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp"/>
+        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
       </feature>
     </config-file>
 
-    <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
+    <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins" />
 
     <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="$URL_SCHEME"/>
+        <data android:scheme="$URL_SCHEME" />
       </intent-filter>
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="$ANDROID_SCHEME"
-              android:host="$ANDROID_HOST"
-              android:pathPrefix="$ANDROID_PATHPREFIX" />
+        <data android:scheme="$ANDROID_SCHEME" android:host="$ANDROID_HOST" android:pathPrefix="$ANDROID_PATHPREFIX" />
       </intent-filter>
     </config-file>
   </platform>
@@ -124,7 +119,7 @@
   <platform name="wp8">
     <config-file target="config.xml" parent="/*">
       <feature name="CustomUriMapperCommand">
-        <param name="wp-package" value="CustomUriMapperCommand"/>
+        <param name="wp-package" value="CustomUriMapperCommand" />
         <param name="onload" value="true" />
       </feature>
     </config-file>
